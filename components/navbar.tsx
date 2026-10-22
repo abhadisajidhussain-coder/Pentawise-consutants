@@ -23,7 +23,7 @@ export default function Navbar() {
             <Image
               src="/pentawise logo.png"
               alt="Pentawise logo"
-              width={120}
+              width={100}
               height={70}
               priority
               className="navbar-logo"
