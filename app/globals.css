@@ -368,6 +368,7 @@
     #087eaa 100%
   );
   font-family: var(--font-montserrat), sans-serif;
+  margin-top: 55px;
 }
 
 .faqs-container {
@@ -814,10 +815,11 @@
 }
 
 .service-icon {
-  display: inline-block;
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
   flex-shrink: 0;
-  font-size: 23px;
-  line-height: 1;
 }
 
 
@@ -853,5 +855,38 @@
   .service-description {
     font-size: 13px;
     line-height: 1.5;
+  }
+}
+
+.university-partners {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.university-partners-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+@media (max-width: 768px) {
+  .university-partners {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .university-partners-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }

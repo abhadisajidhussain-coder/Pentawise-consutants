@@ -131,9 +131,13 @@ export default function Services() {
         {services.map((service) => (
           <article className="service-card" key={service.title}>
             <h3 className="service-title">
-              <span className="service-icon" aria-hidden="true">
-                <Image src={service.image} alt={service.title} width={23} height={23} />
-              </span>
+              <Image
+                src={service.image}
+                alt=""
+                width={24}
+                height={24}
+                className="service-icon"
+                />
               {service.title}
             </h3>
 

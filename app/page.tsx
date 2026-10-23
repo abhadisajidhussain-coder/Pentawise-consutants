@@ -3,7 +3,7 @@ import FAQs from "../components/FAQs";
 import Counter from "../components/counter";
 import Services from "../components/services";
 import Image from "next/image";
-
+import UniversityPartners from "../components/universities_partners";
 
 export default function HomePage() {
   return (
@@ -66,6 +66,7 @@ export default function HomePage() {
       </div>
       </section>
       <Services />
+      <UniversityPartners />
       <FAQs />
     </>
   );
