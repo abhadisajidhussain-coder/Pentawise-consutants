@@ -568,8 +568,8 @@
       to bottom,
       rgba(255, 255, 255, 0.80) 0%,
       rgba(255, 255, 255, 0.80) 25%,
-      rgba(255, 255, 255, 0.99) 45%,
-      rgba(255, 255, 255, 0.99) 65%,
+      rgba(255, 255, 255, 0.90) 45%,
+      rgba(255, 255, 255, 0.90) 65%,
       #fff 100%
     ),
     url("/navbar_background.png");
@@ -589,6 +589,7 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  margin-bottom: 50px;
 }
 
 .hero-trust {
@@ -602,9 +603,9 @@
 .hero-trust p {
   font-family: var(--font-montserrat), sans-serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: #222222;
-  margin: 0;
+  margin: 10px;
 }
 
 .hero-description {
@@ -623,13 +624,10 @@
 
 .student-trust-image {
   display: block;
-  width: 69px;
-  height: 23px;
+  width: 70px;
+  height: 30px;
   object-fit: contain;
 }
-
-
-
 
 .hero h1 {
   font-family: var(--font-dela-gothic), "Dela Gothic One", sans-serif !important;
@@ -638,21 +636,19 @@
   line-height: 1.2;
   letter-spacing: 0;
   color: #242424;
-  margin: 0 0 24px;
+  margin: 0 0 14px;
   text-align: center;
 }
-
 
 .hero-description {
   font-family: var(--font-roboto), sans-serif;
   max-width: 900px;
-  font-weight: 200;
-  margin: 0 auto 32px;
+  font-weight: 400;
+  margin: 0 auto 28px;
   font-size: 16px;
   line-height: 1.8;
   color: #292929;
 }
-
 
 .hero-stats {
   width: 100%;
@@ -661,13 +657,13 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
   text-align: center;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  padding: 12px 16px;
+  box-sizing: border-box;
   justify-items: center;
   align-items: center;
+  background: transparent;
 }
-
 
 .hero-stat {
   position: relative;
@@ -688,8 +684,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 4px;
-  height: 40px;
+  width: 5px;
+  height: 52px;
   background: linear-gradient(
     to bottom,
     #168bdf 0%,
@@ -701,17 +697,30 @@
 .hero-stat h2 {
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   color: #713bd1;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 800;
-  margin: 0 0 4px;
+  margin: 0 0 5px;
 }
 
 .hero-stat p {
   font-family: var(--font-roboto), sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   color: #444444;
   margin: 0;
 }
+
+.hero-details {
+  width: calc(100% + 10%);
+  margin-left: -5%;
+  padding: 18px 5% 24px;
+  box-sizing: border-box;
+
+  background-image: url("/stats background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 /* Responsive layout */
 @media (max-width: 600px) {
@@ -741,5 +750,108 @@
 
   .hero-stat h2 {
     font-size: 19px;
+  }
+}
+
+/* Services section */
+.services-section {
+  position: relative;
+  width: 100%;
+  padding: 32px 4% 55px;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+  background-image: url("/services background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.services-heading {
+  font-family: var(--font-dela-gothic), sans-serif;
+  font-size: 33px;
+  font-weight: 400;
+  color: #292929;
+  text-align: center;
+  margin: 0 0 42px;
+}
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 56px;
+  row-gap: 76px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.service-card {
+  min-width: 0;
+  max-width: 360px;
+}
+
+.service-description {
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #292929;
+  margin: 0;
+  max-width: 100%;
+}
+
+.service-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+  margin: 0 0 16px;
+}
+
+.service-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: 23px;
+  line-height: 1;
+}
+
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-section {
+    padding: 30px 22px 40px;
+  }
+
+  .services-heading {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .service-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .service-description {
+    font-size: 13px;
+    line-height: 1.5;
   }
 }

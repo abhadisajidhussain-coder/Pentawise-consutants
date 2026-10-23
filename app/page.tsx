@@ -1,6 +1,7 @@
 
 import FAQs from "../components/FAQs";
 import Counter from "../components/counter";
+import Services from "../components/services";
 import Image from "next/image";
 
 
@@ -29,7 +30,7 @@ export default function HomePage() {
           <br />
           Global Campuses
         </h1>
-
+        <div className="hero-details">
         <p className="hero-description">
           Pentawise is your trusted partner for studying abroad,
           guiding you to top universities across 20+ countries.
@@ -62,9 +63,9 @@ export default function HomePage() {
             <p>Years Of Experience</p>
           </div>
         </div>
-
+      </div>
       </section>
-
+      <Services />
       <FAQs />
     </>
   );
