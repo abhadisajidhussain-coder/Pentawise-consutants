@@ -860,23 +860,41 @@
 
 .university-partners {
   width: 100%;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   background: #fff;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.university-track {
+  display: flex;
+  width: max-content;
+  animation: university-scroll 15s linear infinite;
 }
 
 .university-partners-image {
   display: block;
-  width: 100%;
+  width: 100vw;
   height: auto;
+  flex-shrink: 0;
   object-fit: contain;
 }
+@keyframes university-scroll {
+  from {
+    transform: translateX(0);
+  }
 
+  to {
+    transform: translateX(-100vw);
+  }
+}
 
+@media (prefers-reduced-motion: reduce) {
+  .university-track {
+    animation: none;
+  }
+}
 
 @media (max-width: 768px) {
   .university-partners {
