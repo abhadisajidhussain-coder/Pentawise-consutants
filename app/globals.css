@@ -890,3 +890,127 @@
     object-fit: contain;
   }
 }
+
+.journey-section {
+  width: 100%;
+  padding: 99px 20px 35px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    #fff 0%,
+    #fdf4ff 55%,
+    #fff 100%
+  );
+}
+
+.journey-card {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+  border: 2px solid #eee0ff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.journey-image {
+  flex: 0 0 40%;
+  min-width: 0;
+}
+
+.journey-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  object-fit: cover;
+}
+
+.journey-content {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 22px 14px 0;
+  padding-left: 0
+}
+
+.journey-content h2 {
+  margin: 8px 8px 8px;
+  font-family: var(--font-dela-gothic), sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+  -webkit-text-stroke: 0;
+}
+
+.journey-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-left: 10px;
+  width: calc(100% - 10px);
+}
+
+.journey-form input {
+  width: 95%;
+  padding: 0;
+  border: none;
+  border-bottom: 1.5px solid #333;
+  outline: none;
+  background: transparent;
+  font-family: "Century Gothic", sans-serif;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.journey-form input:focus {
+  border-bottom-color: #6728a5;
+}
+
+.journey-form button {
+  align-self: flex-start;
+  margin-top: 5px;
+  width: 102px;
+  height: 29px;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #432080, #078fd0);
+  color: #fff;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 0;
+}
+
+@media (max-width: 600px) {
+  .journey-section {
+    padding: 25px 16px;
+  }
+
+  .journey-card {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .journey-image {
+    flex: auto;
+    height: 220px;
+  }
+
+  .journey-content {
+    padding: 20px;
+  }
+
+  .journey-content h2 {
+    font-size: 24px;
+  }
+}

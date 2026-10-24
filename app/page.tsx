@@ -4,6 +4,8 @@ import Counter from "../components/counter";
 import Services from "../components/services";
 import Image from "next/image";
 import UniversityPartners from "../components/universities_partners";
+import StartYourJourney from "../components/SYJ";
+import SYJ from "../components/SYJ";
 
 export default function HomePage() {
   return (
@@ -67,6 +69,7 @@ export default function HomePage() {
       </section>
       <Services />
       <UniversityPartners />
+      <SYJ />
       <FAQs />
     </>
   );
