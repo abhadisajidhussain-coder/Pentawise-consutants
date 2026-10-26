@@ -1,25 +1,64 @@
+
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { Phone } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Countries", href: "/countries" },
-  { label: "Universities", href: "/universities" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Home", href: "/", section: "home" },
+  { label: "Countries", href: "/#countries", section: "countries" },
+  { label: "Services", href: "/#services", section: "services" },
+  { label: "Contact Us", href: "/#contact", section: "contact" },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const updateActiveSection = () => {
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+        return;
+      }
+
+      const marker = 150;
+      let current = "home";
+
+      for (const id of ["countries", "services", "contact"]) {
+        const section = document.getElementById(id);
+
+        if (section && section.getBoundingClientRect().top <= marker) {
+          current = id;
+        }
+      }
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", updateActiveSection, {
+      passive: true,
+    });
+
+    // Initial check is deferred to the next animation frame.
+    const frame = requestAnimationFrame(updateActiveSection);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", updateActiveSection);
+    };
+  }, []);
 
   return (
     <header className="site-header">
       <div className="navbar">
         <div className="navbar-brand">
-          <Link href="/" aria-label="Home">
+          <Link
+            href="/"
+            aria-label="Home"
+            onClick={() => setActiveSection("home")}
+          >
             <Image
               src="/pentawise logo.png"
               alt="Pentawise logo"
@@ -33,14 +72,15 @@ export default function Navbar() {
 
         <nav className="nav-links" aria-label="Main navigation">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = activeSection === link.section;
 
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`nav-link ${isActive ? "active" : ""}`}
-                aria-current={isActive ? "page" : undefined}
+                aria-current={isActive ? "location" : undefined}
+                onClick={() => setActiveSection(link.section)}
               >
                 {link.label}
               </Link>
@@ -56,7 +96,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
           >
             <span className="consultation-icon">
-                <Phone size={16} strokeWidth={2} />
+              <Phone size={16} strokeWidth={2} />
             </span>
 
             <span className="consultation-text">
@@ -69,3 +109,4 @@ export default function Navbar() {
     </header>
   );
 }
+

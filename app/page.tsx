@@ -68,11 +68,20 @@ export default function HomePage() {
         </div>
       </div>
       </section>
-      <DestinationShowcase />
-      <Services />
+      <div id="countries">
+        <DestinationShowcase />
+      </div>
+
+      <div id="services">
+        <Services />
+      </div>
+
       <UniversityPartners />
       <Success_Stories />
-      <SYJ />
+
+      <div id="contact">
+        <SYJ />
+      </div>
       
       <FAQs />
     </>

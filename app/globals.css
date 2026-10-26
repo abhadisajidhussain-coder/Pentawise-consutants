@@ -6,6 +6,9 @@
   background: transparent;
   border-bottom: none;
   box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar {
@@ -110,6 +113,11 @@
   font-weight: 600;
   line-height: 1.5;
   white-space: nowrap;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 40px;
 }
 
 /* ===== TABLET ===== */
