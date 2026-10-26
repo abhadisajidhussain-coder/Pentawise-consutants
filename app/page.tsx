@@ -1,10 +1,11 @@
 
 import FAQs from "../components/FAQs";
 import Counter from "../components/counter";
+import DestinationShowcase from "../components/destinationshowcase";
 import Services from "../components/services";
 import Image from "next/image";
 import UniversityPartners from "../components/universities_partners";
-import StartYourJourney from "../components/SYJ";
+import Success_Stories from "../components/successs_stories";
 import SYJ from "../components/SYJ";
 
 export default function HomePage() {
@@ -67,9 +68,12 @@ export default function HomePage() {
         </div>
       </div>
       </section>
+      <DestinationShowcase />
       <Services />
       <UniversityPartners />
+      <Success_Stories />
       <SYJ />
+      
       <FAQs />
     </>
   );

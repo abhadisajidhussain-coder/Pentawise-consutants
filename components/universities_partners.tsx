@@ -5,7 +5,7 @@ export default function UniversityPartners() {
     <section className="university-partners">
       <div className="university-track">
         <Image
-          src="/Univesities.png"
+          src="/universities logo.png"
           alt="Our partner universities"
           width={1440}
           height={150}
@@ -13,7 +13,7 @@ export default function UniversityPartners() {
           priority
         />
         <Image
-          src="/Univesities.png"
+          src="/universities logo.png"
           alt=""
           aria-hidden={true}
           width={1440}
